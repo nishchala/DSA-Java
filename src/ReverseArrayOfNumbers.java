@@ -19,16 +19,14 @@ public class ReverseArrayOfNumbers {
             numbers[i] = input.nextInt();
         }
 
-        reverseArray(numbers,arraySize);
+        reverseArray(numbers,0,arraySize-1);
         System.out.println("Reversed array is : ");
         for(int number : numbers) {
             System.out.print(number + " ");
         }
     }
 
-    public static void reverseArray(int[] originalArray, int sizeOfArray) {
-        int left = 0;
-        int right = sizeOfArray - 1;
+    public static void reverseArray(int[] originalArray, int left, int right) {
         int temp;
         while(left<right) {
             temp = originalArray[left];
