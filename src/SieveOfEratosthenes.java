@@ -1,10 +1,11 @@
 /* Problem: find all prime numbers up to any given limit
 
 Brute force - Find if each element from 2 to N is prime or not.
-Time complexity : order of number of elements N * sqrt(N)
+Time complexity : O(number of elements N) * sqrt(N)
 
 Optimised solution: Find prime number upto number N using sieve of eratosthenes,
  by marking the multiples of each number from 2 to sqrt N as non-prime
+ Time complexity - O(N*Log(log(N)))
  */
 
 import java.util.Scanner;
@@ -28,10 +29,12 @@ public class SieveOfEratosthenes {
             prime[i] = 1;
         }
         int i = 2;
-        int sqrtN = (int) Math.sqrt(number);
-        while(i<=sqrtN) {
-            for(int j=i*2;j<=number;j+=i) {
-                prime[j] = 0;
+//        int sqrtN = (int) Math.sqrt(number);
+        while(i*i<=number) {
+            if(prime[i]==1) {
+                for(int j=i*i;j<=number;j+=i) {
+                    prime[j] = 0;
+                }
             }
             i++;
         }

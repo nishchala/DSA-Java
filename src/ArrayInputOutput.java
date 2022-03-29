@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ArrayInputOutput {
     public void printArray(int[] numbers){
         for(int number : numbers) {
-            System.out.print(number);
+            System.out.print(number + " ");
         }
     }
 
