@@ -3,6 +3,11 @@ import java.util.Scanner;
 /* Brute Force - Add every number in  array with every other element in that array and return the numbers if their
 sum is equal to target sum
 Time complexity - O(n^2)
+OR
+Sort the array and Take two pointers left and right. Left = 0, right =n-1. Add the elements at left and right.
+If addition is greater than target then decrement right. If addition is less then increment left
+else if equal return elements at left and right.
+Time Complexity - O(NlogN)
 
 Optimised Solution - for each element in array check if its target-element value is present in hashset.
 It is present return the two elements, else add the element to hashset.
